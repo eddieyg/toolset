@@ -1,0 +1,19 @@
+{
+  "name": "toolset",
+  "version": "1.0.0",
+  "description": "js封装工具集",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddieyg/toolset.git"
+  },
+  "author": "eddieyg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eddieyg/toolset/issues"
+  },
+  "homepage": "https://github.com/eddieyg/toolset#readme"
+}
