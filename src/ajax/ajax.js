@@ -23,6 +23,7 @@ const ajax = ({
   error,
 }) => {
   let Req, handleData, ContentType = ''
+  type = type.toLocaleLowerCase()
 
   if (window.XMLHttpRequest) {
     Req = new XMLHttpRequest()
