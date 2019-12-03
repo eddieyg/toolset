@@ -18,3 +18,21 @@
 .clearfix {
   *zoom: 1;
 }
+
+/* 单行文字省略号 */
+.a-line-ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 多行文字省略号 */
+.multi-line-ellipsis {
+  display: -webkit-box;
+  word-break: break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
