@@ -1,0 +1,20 @@
+/**
+  *  CSS公共基础样式
+  *  CSS common base style
+  */
+
+
+/* 清除浮动 */
+.clearfix:before,
+.clearfix:after {
+  display: block;
+  content: '';
+  height:0;
+  visibility:hidden;
+}
+.clearfix:after {
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
