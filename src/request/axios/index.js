@@ -3,7 +3,6 @@
  */
 
 import Axios from 'axios'
-import QS from 'qs'
 
 /**
  *  new AxiosBase(
@@ -44,7 +43,7 @@ export default class AxiosBase {
         if (!url) reject(new Error('not request url'))
         options = { ...options, url, method }
         if (/put|post|patch/.test(method)) {
-          options.data = QS.stringify(params)
+          options.data = params
         } else {
           options.params = params
         }
