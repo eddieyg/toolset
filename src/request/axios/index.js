@@ -1,5 +1,5 @@
 /**
- *  Axios基础封装
+ *  Axios可配置多实例封装
  */
 
 import Axios from 'axios'
