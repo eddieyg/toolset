@@ -2,7 +2,7 @@
  *  Axios请求实例
  */
 
-import Axios from './index'
+import Axios from '../index'
 import QS from 'qs'
 
 // 原始配置的请求实例
@@ -12,7 +12,7 @@ const originalHttp = new Axios({
 
 // demo的请求实例
 const demoHttp = new Axios({
-  baseURL: 'http://api.example.com',
+  baseURL: 'http://rest.apizza.net',
   timeout: 100000
 }, {
   req: config => {
@@ -36,5 +36,18 @@ const demoHttp = new Axios({
   }
 }).init()
 
-export const originalDemo = p => originalHttp('get', '/demo/get', p)
-export const postDemo = p => demoHttp('post', '/demo/post', p)
+// 声明接口
+const originalDemo = p => originalHttp('get', 'http://rest.apizza.net/mock/bddccdad2768a4343e7830a52dee1153/getStatus', p)
+const postDemo = p => demoHttp('post', '/mock/bddccdad2768a4343e7830a52dee1153/getList', p)
+
+// 使用接口
+originalDemo({
+  o1: '123'
+}).then(res => {
+  console.log(res)
+})
+postDemo({
+  p1: [12, 233, 33]
+}).then(res => {
+  console.log(res)
+})

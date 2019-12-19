@@ -12,7 +12,7 @@ const objToString = obj => {
   * Lightweight simplified Ajax request encapsulation
   * @param { type, url, data, headers, sync, timeout, success, error }
   */
-const ajax = ({
+export default ({
   type = 'GET',
   url,
   data = {},
