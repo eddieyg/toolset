@@ -18,7 +18,7 @@ module.exports = env => {
     },
     module: {
       rules: [
-        // ES6+语法转5
+        // ES6+语法转ES5
         {
           test: /\.js$/,
           exclude: /node_modules/,

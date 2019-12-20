@@ -2,7 +2,7 @@ import ajax from '../index'
 
 ajax({
   type: 'POST',
-  url: 'http://rest.apizza.net/mock/bddccdad2768a4343e7830a52dee1153/test',
+  url: 'http://rest.apizza.net/mock/bddccdad2768a4343e7830a52dee1153/getList',
   data: {
     p1: 123456,
     p2: 'abcdef'
@@ -20,7 +20,7 @@ ajax({
 
 ajax({
   type: 'GET',
-  url: '/mock/bddccdad2768a4343e7830a52dee1153/userinfo',
+  url: 'http://rest.apizza.net/mock/bddccdad2768a4343e7830a52dee1153/getStatus',
   data: {
     p1: 123456,
     p2: 'abcdef'
