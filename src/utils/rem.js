@@ -25,7 +25,7 @@
     //浏览器后退时重新计算
     if (evt.persisted) {
       clearTimeout(timeID);
-      timeID = setTimeout(refresh, 300);
+      timeID = setTimeout(refreshRem, 300);
     }
   }, false);
 

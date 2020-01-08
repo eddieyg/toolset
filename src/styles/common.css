@@ -36,3 +36,20 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
+
+/* 0.5px 线条 */
+.point-five-px-line {
+  position: relative;
+}
+.point-five-px-line::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 200%;
+  height: 1px;
+  background-color: #e5e5e5;
+  transform: scale(0.5);
+  transform-origin: 0;
+}
