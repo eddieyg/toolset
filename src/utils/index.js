@@ -63,9 +63,6 @@ export default {
       }
       todayGap = todayGap / dayMillisecond
       result.days = decimal - todayGap <= 0 ? Math.floor(dayGap) : Math.ceil(dayGap)
-      console.log(dayGap)
-      console.log(decimal)
-      console.log(todayGap)
     }
 
     result.type = isPast ? 'past' : 'future'
