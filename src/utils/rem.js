@@ -1,9 +1,13 @@
+/*
+ * @Description: REM自适应Font-Size设置
+ * @Author: eddie
+ * @Date: 2019-12-13 11:50:05
+ */
+
 /**
- * REM自适应
  * designWidth 设计稿实际宽度
  * maxWidth 制作稿的最大宽度
- * */
- 
+ * */ 
 (function (designWidth = 375, maxWidth = 750) {
   var docEle = document.documentElement;
 
