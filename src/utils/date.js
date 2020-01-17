@@ -10,7 +10,7 @@
  * @param {number} timestamp 某个时间的时间戳
  * @return {object}
  *  {
- *    type: 'past'/'future', // 时间为：过去/未来
+ *    type: 'past'/'now'/'future', // 时间为：过去/今天/未来
  *    days： number          // 间隔今天多少天
  *  }
  */
@@ -43,6 +43,6 @@ export const getIntervalDays = timestamp => {
     todayGap = (todayGap + 1) / dayMillisecond
     result.days = decimal <= todayGap ? Math.floor(dayGap) : Math.ceil(dayGap)
   }
-  result.type = isPast ? 'past' : 'future'
+  result.type = result.days === 0 ? 'now' : isPast ? 'past' : 'future'
   return result
 }

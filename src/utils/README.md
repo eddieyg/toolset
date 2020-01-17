@@ -1,25 +1,32 @@
 # 工具函数
 以下为日常工具函数封装的集合
 
+### 比较零散的封装 - index.js
+```
+  import { ... } from 'utils/index';
+```
+- **createRandomNum：** 生成指定范围的随机数
+- **belongType：** 获取数据归属数据类型
 
-## 比较零散的封装 - index.js
+### 日期工具函数 - date.js
 ```
-  import { belongType, ... } from 'utils/index';
+  import { ... } from 'utils/date';
+```
+- **getIntervalDays：** 获取时间戳距离今天有多少天（不按具体的24小时一天算，按天差算。如现在22点，距离时间戳还有3小时，但依然按1天距离算）
+
+### 字符串工具函数 - str.js
+```
+  import { ... } from 'utils/str';
+```
+- **objStringify：** 对象序列化为字符串参数（不支持多维对象） `{ a: 1, b: [] }  >>  'a=1&b="[]"'`
+- **strParse：** 参数字符串解析为对象  `'a=1&b="[]"'  >>  { a: 1, b: [] }`
+
+### App webview内调用协议链接 - wvcall.js
+```
+  import wvcall from 'utils/wvcall';
 ```
 
-### 生成随机数 createRandomNum
-`@description: 生成随机数`  
-`@param {number} min 最小值`  
-`@param {number} max 最大值`  
-`@return {number} 随机数`
+### REM自适应Font-Size设置 - rem.js
 ```
-createRandomNum(1, 10)      // 8
-```
-
-### 获取数据归属类型 belongType
-`@description: 获取数据归属类型`  
-`@param {*} 需要判断类型的任何值`  
-`@return {string} 值的类型（全小写）`
-```
-belongType([])      // 'array'
+  import 'utils/rem';
 ```
