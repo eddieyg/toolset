@@ -24,6 +24,30 @@
 ### App webview内调用协议链接 - wvcall.js
 ```
   import wvcall from 'utils/wvcall';
+
+  // 配置App协议列表
+  wvcall.config({
+    closewebview: 'example://closewebview',
+    share: {
+      url: 'example://share',
+      params: {
+        title: '标题',
+      },
+      callback: () => {},
+    }
+  }, 'appCallback')
+
+  // 调用App协议链接
+  wvcall.call('closewebview')
+  let str = wvcall.call('share', {
+    title: '新的标题',
+    desc: '描述'
+  }, res => {
+    console.log(res)
+  })
+
+  console.log(str)
+  // example://sharehhh/shareCB?title=%E6%96%B0%E7%9A%84%E6%A0%87%E9%A2%98&desc=%E6%8F%8F%E8%BF%B0
 ```
 
 ### REM自适应Font-Size设置 - rem.js
