@@ -85,7 +85,7 @@ const call = (type, params = {}, cb) => {
   if ((cb && typeof cb === 'function') || ag.callback) {
     cbName = `${type}CB`
     url += `/${cbName}`
-    if (cb) {
+    if (cb && typeof cb === 'function') {
       window[callbackObjName][cbName] = () => {
         cb()
         delete window[callbackObjName][cbName]
