@@ -39,7 +39,7 @@ const agreementList = {
 /**
  * 调用App协议链接
  *
- * @param {string} type     App协议配置列表的key名
+ * @param {string} type     App协议配置列表的key名（必填）
  * @param {object} params   协议参数（会覆盖默认参数）
  * @param {function} cb     协议执行回调函数（会覆盖默认回调，大部分协议App都没支持）
  *

@@ -4,33 +4,22 @@
  * @Date: 2020-01-13 15:34:12
  */
 
-// 设置url参数
-export const setRequest = (url, params, type = {}) => {
-  if (typeof (params) !== 'object') return url
-  var urlList = url.split('#')
-  url = urlList[0]
-  var hash = urlList[1] ? '#' + urlList[1] : ''
-  var paramsStrLIst = []
-  for (var key in params) {
-    var pattern = new RegExp(key + '=([^&]*)&?')
-    url = url.replace(pattern, '')
-    paramsStrLIst.push(key + '=' + params[key])
-  }
-  if (url.match('[?]')) {
-    return (url + '&' + paramsStrLIst.join('&')).replace('?&', '?') + hash
-  } else {
-    return url + '?' + paramsStrLIst.join('&') + hash
-  }
-},
-
-  // 生成随机数
+/**
+ * @description: 生成随机数
+ * @param {number} min 最小值
+ * @param {number} max 最大值
+ * @return {number} 随机数
+ */
 export const createRandomNum = (min, max) => {
   return Math.floor(Math.random() * max) + min
-},
+}
 
-  // 数据归属类型
+/**
+ * @description: 获取数据归属类型
+ * @param {*} 需要判断类型的任何值
+ * @return {string} 值的类型（全小写）
+ */
 export const belongType = d => {
   const type = Object.prototype.toString.call(d)
   return type.replace(/\[object\s|\]/g, '').toLocaleLowerCase()
 }
-

@@ -9,3 +9,7 @@ js封装工具集
   npm run dev -- --env.path=request/ajax
   npm run build -- --env.path=request/ajax
 ```
+
+### 项目目录
+
+- **[工具函数](src/utils/README.md)**

@@ -1,3 +1,8 @@
+/*
+ * @Description: 
+ * @Author: eddie
+ * @Date: 2019-12-18 18:10:08
+ */
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -15,6 +20,11 @@ module.exports = env => {
     output: {
       path: resolve('dist/' + _filename),
       filename: '[name].[hash].js'
+    },
+    resolve: {
+      alias: {
+        '@': resolve('src')
+      }
     },
     module: {
       rules: [
