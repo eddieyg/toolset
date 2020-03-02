@@ -6,6 +6,26 @@
 import { belongType } from './index'
 
 /**
+ * @description: 过滤字符串的html标签和转义字符
+ * @param {string} 需要过滤的字符串
+ * @return {string} 过滤后的字符串
+ */
+export const filterHTMLTags = str => {
+  if (typeof str !== 'string') return '';
+  return str.replace(/<\/?.+?>/g, '').replace(/&[#0-9a-zA-Z]+;/g, '');
+};
+
+/**
+ * @description: 去除字符串左右两侧的空格
+ * @param {*} 需要处理的字符串
+ * @return {string} 处理后的字符串
+ */
+export const trim = str => {
+  if (typeof str !== 'string') return '';
+  return str.replace(/(^\s*)|(\s*$)/g, '');
+}
+
+/**
  * @description: 对象序列化为字符串参数（不支持多维对象） { a: 1, b: [] } >> 'a=1&b="[]"'
  * @param {object} strObj 需要序列化的对象（必填，支持对象的值为string、number、array、object）
  * @param {object} options 配置选项
