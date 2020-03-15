@@ -7,6 +7,7 @@
 ```
 - **createRandomNum：** 生成指定范围的随机数
 - **belongType：** 获取数据归属数据类型
+- **deepClone：** 深拷贝对象或数组
 
 ### 日期工具函数 - date.js
 ```

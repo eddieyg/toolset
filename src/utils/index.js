@@ -16,10 +16,38 @@ export const createRandomNum = (min, max) => {
 
 /**
  * @description: 获取数据归属类型
- * @param {*} 需要判断类型的任何值
+ * @param {*} d 需要判断类型的任何值
  * @return {string} 值的类型（全小写）
  */
 export const belongType = d => {
-  const type = Object.prototype.toString.call(d)
-  return type.replace(/\[object\s|\]/g, '').toLocaleLowerCase()
+  return Object.prototype.toString.call(d).slice(8, -1).toLocaleLowerCase()
+}
+
+/**
+ * @description: 深拷贝对象或数组
+ * @param {*} data 拷贝的原数据
+ * @return {object|array} 深拷贝后的对象或数组
+ */
+export const deepClone = (data, hash = new WeakMap()) => {
+  if (hash.has(data)) return hash.get(data)
+  let res
+  switch (belongType(data)) {
+    case 'object':
+      res = {}
+      break
+    case 'array':
+      res = []
+      break
+    default:
+      return data
+  }
+  hash.set(data, res)
+  for (let key in data) {
+    if (['object', 'array'].includes(belongType(data[key]))) {
+      res[key] = deepClone(data[key], hash)
+    } else {
+      res[key] = data[key]
+    }
+  }
+  return res
 }
