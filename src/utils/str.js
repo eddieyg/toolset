@@ -32,14 +32,11 @@ export const trim = str => {
  */
 export const convertToHump = str => {
   if (typeof str !== 'string') return '';
-  if (/[a-zA-Z]-[a-zA-Z]/.test(str)) {
-    let strs = str.split('').map((e, i, arr) => {
-      if (e === '-') return ''
+  if (/[a-zA-Z]?-[a-zA-Z]/.test(str)) {
+    let strs = str.split('-').map((e, i) => {
+      if (!e) return ''
       if (i === 0) return e
-      if (arr[i - 1] === '-') {
-        return e.toLocaleUpperCase()
-      }
-      return e
+      return e[0].toLocaleUpperCase() + e.slice(1)
     })
     return strs.join('')
   }
