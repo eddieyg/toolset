@@ -23,6 +23,7 @@
 - **strParse：** 参数字符串解析为对象  `'a=1&b="[]"'  >>  { a: 1, b: [] }`
 - **filterHTMLTags：** 过滤字符串的html标签和转义字符
 - **trim：** 去除字符串左右两侧的空格
+- **convertToHump：** `'-'`分隔字符串转为驼峰字符串   `get-some  >>  getSome`
 
 ### App webview内调用协议链接 - wvcall.js
 ```

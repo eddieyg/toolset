@@ -26,6 +26,27 @@ export const trim = str => {
 }
 
 /**
+ * @description: '-'分隔字符串转为驼峰字符串
+ * @param {*} 需要处理的字符串
+ * @return {string} 处理后的字符串
+ */
+export const convertToHump = str => {
+  if (typeof str !== 'string') return '';
+  if (/[a-zA-Z]-[a-zA-Z]/.test(str)) {
+    let strs = str.split('').map((e, i, arr) => {
+      if (e === '-') return ''
+      if (i === 0) return e
+      if (arr[i - 1] === '-') {
+        return e.toLocaleUpperCase()
+      }
+      return e
+    })
+    return strs.join('')
+  }
+  return str;
+}
+
+/**
  * @description: 对象序列化为字符串参数（不支持多维对象） { a: 1, b: [] } >> 'a=1&b="[]"'
  * @param {object} strObj 需要序列化的对象（必填，支持对象的值为string、number、array、object）
  * @param {object} options 配置选项
