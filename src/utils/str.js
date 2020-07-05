@@ -6,6 +6,21 @@
 import { belongType } from './index'
 
 /**
+ * @description: 保留小数字位数
+ * @param {number} num 需要被保留的数字
+ * @param {number} keepNum 保留位数
+ * @return {string}
+ */
+export const toFixed = (num, keepNum = 2) => {
+  if (!/^-?[0-9]+\.?[0-9]*$/.test(num)) return ''
+  let nums = String(num).split('.')
+  nums[1] = nums[1] ? nums[1].slice(0, keepNum) : ''
+  let addZeroTotal = keepNum - String(nums[1]).length
+  nums[1] += '0'.repeat(addZeroTotal > 0 ? addZeroTotal : 0)  
+  return nums.join('.')
+}
+
+/**
  * @description: 过滤字符串的html标签和转义字符
  * @param {string} 需要过滤的字符串
  * @return {string} 过滤后的字符串

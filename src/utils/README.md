@@ -6,6 +6,7 @@
   import { ... } from 'utils/index';
 ```
 - **createRandomNum：** 生成指定范围的随机数
+- **getRandomLetter：** 生成指定数量的随机字母
 - **belongType：** 获取数据归属数据类型
 - **deepClone：** 深拷贝对象或数组
 
@@ -21,6 +22,7 @@
 ```
 - **objStringify：** 对象序列化为字符串参数（不支持多维对象） `{ a: 1, b: [] }  >>  'a=1&b="[]"'`
 - **strParse：** 参数字符串解析为对象  `'a=1&b="[]"'  >>  { a: 1, b: [] }`
+- **toFixed：** 保留小数字位数
 - **filterHTMLTags：** 过滤字符串的html标签和转义字符
 - **trim：** 去除字符串左右两侧的空格
 - **convertToHump：** `'-'`分隔字符串转为驼峰字符串   `get-some  >>  getSome`

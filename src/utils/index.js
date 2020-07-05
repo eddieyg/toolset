@@ -5,13 +5,31 @@
  */
 
 /**
- * @description: 生成随机数
+ * @description 生成随机数
  * @param {number} min 最小值
- * @param {number} max 最大值
+ * @param {number} max 最大值（不包含）
  * @return {number} 随机数
  */
 export const createRandomNum = (min, max) => {
-  return Math.floor(Math.random() * max) + min
+  return Math.floor(Math.random() * (max - min)) + min
+}
+
+/**
+ * @description 生成随机英文字母
+ * @param {number} num 生成位数
+ * @param {string} options.type  'upperCase'大写字母 、'lowerCase'小写字母
+ */
+export const getRandomLetter = (num, options = {}) => {
+  if (typeof num !== 'number' || num === 0) return ''
+  let { type = 'upperCase' } = options
+  const upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+  const lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+  let letters = type === 'upperCase' ? upperCase : lowerCase
+  let randomLetters = []
+  for (let x = 0; x < num; x++) {
+    randomLetters.push(letters[createRandomNum(0, 26)])
+  }
+  return randomLetters.join('')
 }
 
 /**

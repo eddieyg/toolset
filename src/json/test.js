@@ -113,9 +113,9 @@ const queryJson = (_path, param = {}) => {
   return res
 }
 let id = +new Date()
-updateJson('../../dist/print', {[id+'_' + createRandomNum(10000, 99999)]: {id, date: formatTime(new Date(), 'y-m-d h:m:s')}})
+// updateJson('../../dist/print', {[id+'_' + createRandomNum(10000, 99999)]: {id, date: formatTime(new Date(), 'y-m-d h:m:s')}})
 
-console.log(readJson('../../dist/print-type.json'))
-// console.log(fs.existsSync(resolve('../../dist/aaa/ccc/as')))
-// fs.mkdirSync(resolve('../../dist/aaa/ccc'), { recursive: true })
+// console.log(readJson('../../dist/print-type.json'))
+console.log(fs.existsSync(resolve('../../dist/aaa/bbb/a.js')))
+// fs.mkdirSync(resolve('../../dist/aaa/bbbb'), { recursive: true })
 
