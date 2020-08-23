@@ -16,13 +16,19 @@
 ```
 - **getIntervalDays：** 获取时间戳距离今天有多少天（不按具体的24小时一天算，按天差算。如现在22点，距离时间戳还有3小时，但依然按1天距离算）
 
+### 数字工具函数 - num.js
+```
+  import { ... } from 'utils/num';
+```
+- **toFixed：** 保留小数字位数
+- **computeNum：** 加减乘除法计算 获取精确无误差的结果
+
 ### 字符串工具函数 - str.js
 ```
   import { ... } from 'utils/str';
 ```
 - **objStringify：** 对象序列化为字符串参数（不支持多维对象） `{ a: 1, b: [] }  >>  'a=1&b="[]"'`
 - **strParse：** 参数字符串解析为对象  `'a=1&b="[]"'  >>  { a: 1, b: [] }`
-- **toFixed：** 保留小数字位数
 - **filterHTMLTags：** 过滤字符串的html标签和转义字符
 - **trim：** 去除字符串左右两侧的空格
 - **convertToHump：** `'-'`分隔字符串转为驼峰字符串   `get-some  >>  getSome`
