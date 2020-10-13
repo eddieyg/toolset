@@ -8,6 +8,15 @@ import QS from 'qs'
 // 原始配置的请求实例
 const originalHttp = new Axios({
   timeout: 5000
+}, {
+  req: config => {
+    // 在发送请求之前做些什么
+    if (/put|post|patch/.test(config.method)) {
+      config.data = QS.stringify(config.data)
+    }
+    return config
+  },
+
 }).init()
 
 // demo的请求实例
@@ -42,7 +51,8 @@ const postDemo = p => demoHttp('post', '/mock/bddccdad2768a4343e7830a52dee1153/g
 
 // 使用接口
 originalDemo({
-  o1: '123'
+  o1: '123',
+  o2: 'bbbb'
 }).then(res => {
   console.log(res)
 })

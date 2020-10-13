@@ -18,13 +18,9 @@ export default class AxiosBase {
     this.defaultConfig = {
       timeout: 10000,
       headers: {
-        get: {
-          'Content-Type': 'application/json; charset=utf-8'
-        },
-        post: {
-          'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
-        }
-      }
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      responseType: 'json',
     }
     this.createInstance()
     this.addInterceptor()
@@ -41,7 +37,7 @@ export default class AxiosBase {
     ) => {
       return new Promise((resolve, reject) => {
         if (!url) reject(new Error('not request url'))
-        options = { ...options, url, method }
+        Object.assign(options, { url, method })
         if (/put|post|patch/.test(method)) {
           options.data = params
         } else {

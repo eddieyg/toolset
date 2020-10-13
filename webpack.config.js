@@ -55,9 +55,9 @@ module.exports = env => {
       // 配置 服务器文件根目录 (用于访问本地文件)
       // contentBase: path.join(__dirname, 'public'),
       // 服务监听的地址
-      host: '127.1.1.1',
+      host: '127.0.0.1',
       // 监听端口
-      port: 8080,
+      port: 8888,
       // 模块热更新
       hot: true,
       // URL路由重定向
