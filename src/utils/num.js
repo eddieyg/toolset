@@ -8,14 +8,34 @@
  * @description: 保留小数字位数
  * @param {number} num 需要被保留的数字
  * @param {number} keepNum 保留位数
+ * @param {boolean} isRound 是否四舍五入
  * @return {string}
  */
-export const toFixed = (num, keepNum = 2) => {
+// 保留小数字位数
+export const toFixed = (num, keepNum = 2, isRound = false) => {
   if (!/^-?[0-9]+\.?[0-9]*$/.test(num)) return ''
   let nums = String(num).split('.')
-  nums[1] = nums[1] ? nums[1].slice(0, keepNum) : ''
+  if (nums[1]) {
+    let num1 = nums[1].split('')
+    if (num1.length > keepNum && isRound && num1[keepNum] > 4) {
+      let val = num1[keepNum - 1] * 1 + 1
+      if (val > 9) {
+        if (keepNum - 2 >= 0) {
+          num1[keepNum - 2] = num1[keepNum - 2] * 1 + 1
+        } else {
+          num[0][num[0].length - 1] = num[0][num[0].length - 1] * 1 + 1
+        }
+        num1[keepNum - 1] = '0'
+      } else {
+        num1[keepNum - 1] = val
+      }
+    }
+    nums[1] = num1.slice(0, keepNum).join('')
+  } else {
+    nums[1] = ''
+  }
   let addZeroTotal = keepNum - String(nums[1]).length
-  nums[1] += '0'.repeat(addZeroTotal || 0)  
+  nums[1] += '0'.repeat(addZeroTotal > 0 ? addZeroTotal : 0)
   return nums.join('.')
 }
 
