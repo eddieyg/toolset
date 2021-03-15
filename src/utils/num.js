@@ -36,7 +36,7 @@ export const toFixed = (num, keepNum = 2, isRound = false) => {
   }
   let addZeroTotal = keepNum - String(nums[1]).length
   nums[1] += '0'.repeat(addZeroTotal > 0 ? addZeroTotal : 0)
-  return nums.join('.')
+  return nums[1] === '' ? nums[0] : nums.join('.')
 }
 
 /**
